@@ -9,7 +9,7 @@ menu = """
 saldo = 0
 limite = 500
 numero_saques = 0
-limite_saques = 3
+limite_saques = 10 # Limite diario será de 10 saques por dia.
 
 while True:
     opcao = input(menu)
