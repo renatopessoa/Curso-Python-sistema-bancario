@@ -23,7 +23,8 @@ while True:
 
         if valor > 0:
             saldo += valor
-            extrato += f"Depósito: R$ {valor:.2f}\n"
+            data_hora = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+            extrato += f"{data_hora} - Depósito: R$ {valor:.2f}\n"
             print(f"Depósito de R$ {valor:.2f} realizado com sucesso!")
         else:
             print("Operação falhou! O valor informado é inválido.")
@@ -43,7 +44,8 @@ while True:
             print("Operação falhou! Número máximo de saques excedido.")
         elif valor > 0:
             saldo -= valor
-            extrato += f"Saque: R$ {valor:.2f}\n"
+            data_hora = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+            extrato += f"{data_hora} - Saque: R$ {valor:.2f}\n"
             numero_saques += 1
             print(f"Saque de R$ {valor:.2f} realizado com sucesso!")
         else:
@@ -52,9 +54,8 @@ while True:
     elif opcao == "e":
         print("\n============ EXTRATO BANCARIO ============")
         print("Não foram realizadas movimentações." if not extrato else extrato)
-        print(f"\nSaldo: R$ {saldo:.2f}")
+        print(f"\nSaldo: R$ {saldo:.2f}")        
         print("=========================================")
-
     elif opcao == "x":
         print("Saindo...")
         break
