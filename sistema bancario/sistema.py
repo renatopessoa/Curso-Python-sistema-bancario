@@ -2,6 +2,8 @@ import datetime
 
 print("--- Sistema Bancário ---")
 
+
+
 menu = """
 [d] Depositar
 [s] Sacar
@@ -14,6 +16,17 @@ limite = 500
 extrato = ""
 numero_saques = 0
 limite_saques = 2  # Limite diario será de 10 saques por dia.
+
+
+
+def depositar(saldo, valor, extrato):
+    return saldo + valor, extrato + f"Depósito: R$ {valor:.2f}\n"
+
+def sacar(saldo, valor, extrato, numero_saques):
+    return saldo - valor, extrato + f"Saque: R$ {valor:.2f}\n", numero_saques + 1
+
+def exibiri_extrato(saldo, extrato):
+    return
 
 while True:
     opcao = input(menu)
